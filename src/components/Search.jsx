@@ -32,12 +32,14 @@ export function Search(props) {
           <img src="${icon}" />
           `)
         } else {
+          setCity(`
+          <p class="err">City Not Found!</p>
+          `)
         }
       })
 
     lastSearch = currentValue
   }
-
 
   return (
     <>
@@ -59,11 +61,16 @@ export function Search(props) {
         </form>
       </div>
 
-      {city != "" ? (
-        <div dangerouslySetInnerHTML={{ __html: city }} className="output" />
-      ) : (
-        <div>nothing</div>
-      )}
+      <div className="weather-display-container">
+        {city != "" ? (
+          <div
+            dangerouslySetInnerHTML={{ __html: city }}
+            className="output"
+          />
+        ) : (
+          <div></div>
+        )}
+      </div>
     </>
   )
 }

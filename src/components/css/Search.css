@@ -48,10 +48,18 @@
   translate: .3% .3%;
 }
 
+.weather-display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
 .output {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 .output > img {
@@ -67,4 +75,9 @@
   display: inherit;
   flex-direction: column;
   gap: 5px;
+}
+
+
+.err {
+  color: rgb(255, 128, 128);
 }
