@@ -1,6 +1,6 @@
 import { MagnifyingGlass } from "@phosphor-icons/react"
-import "./css/Search.css"
 import { useState } from "react"
+import "./css/Search.css"
 
 export function Search(props) {
   const [city, setCity] = useState("")
@@ -12,7 +12,9 @@ export function Search(props) {
     const currentValue = document.querySelector("input[name=searchInput]").value
     if (lastSearch == currentValue) return
 
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${currentValue}&appid=0de9c719c375b613fc8e084c8439afe1&units=metric`
+    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${currentValue}&appid=${
+      import.meta.env.VITE_API_TOKEN
+    }&units=metric`
 
     fetch(apiUrl)
       .then((res) => res.json())
